@@ -14,7 +14,6 @@ import utility.DriverSetup;
 import utility.Locator;
 import utility.TakeScreenShot;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -98,17 +97,18 @@ public class TestCase1 extends DriverSetup{
             all_data[3] = resultPrices.get(i).getText();
             int j = 0;
             for (String data : all_data) {
-                Cell cell = row.createCell(j++);
-                cell.setCellValue(data);
+                System.out.println(data);
+                /*Cell cell = row.createCell(j++);
+                cell.setCellValue(data);*/
             }
         }
 
-        try (FileOutputStream outputStream = new FileOutputStream(output_path + "\\Output\\output.xlsx")) {
+       /* try (FileOutputStream outputStream = new FileOutputStream(output_path + "\\Output\\output.xlsx")) {
             workbook.write(outputStream);
             ts.snapShot("result");
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
         Thread.sleep(10000);
 
     }
