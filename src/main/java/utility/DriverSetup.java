@@ -3,6 +3,7 @@
  */
 package utility;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -18,25 +19,28 @@ public class DriverSetup {
 
         if (browserName.equalsIgnoreCase("chrome")) {
             String completePath = System.getProperty("user.dir") + "/driver/chromedriver.exe";
-            System.setProperty("webdriver.chrome.driver", completePath);
+           // System.setProperty("webdriver.chrome.driver", completePath);
+            WebDriverManager.chromedriver().setup();
 
             driver = new ChromeDriver();
         }
         else if(browserName.equalsIgnoreCase("firefox")){
             String completePath = System.getProperty("user.dir") + "/driver/geckodriver.exe";
-            System.setProperty("webdriver.gecko.driver", completePath);
-
+            //System.setProperty("webdriver.gecko.driver", completePath);
+            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         }
         else if(browserName.equalsIgnoreCase("edge")){
             String completePath = System.getProperty("user.dir") + "/driver/edgedriver.exe";
-            System.setProperty("webdriver.edge.driver", completePath);
+            //System.setProperty("webdriver.edge.driver", completePath);
+            WebDriverManager.edgedriver().setup();
 
             driver = new EdgeDriver();
         }
         else if(browserName.equalsIgnoreCase("opera")){
             String completePath = System.getProperty("user.dir") + "/driver/operadriver.exe";
-            System.setProperty("webdriver.opera.driver", completePath);
+           // System.setProperty("webdriver.opera.driver", completePath);
+            WebDriverManager.operadriver().setup();
 
             driver = new OperaDriver();
         }

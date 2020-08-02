@@ -63,7 +63,8 @@ public class TestCase1 extends DriverSetup{
 
     //Click the newest tab
     @Test(priority = 3)
-    void clickNewestFirstTab(){
+    void clickNewestFirstTab() throws InterruptedException {
+        Thread.sleep(3000);
         locator.setNewestFirst().click();
     }
 
