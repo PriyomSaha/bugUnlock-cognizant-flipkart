@@ -20,16 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e878e9f-43da-42d3-9097-b8dd24dd4338" name="Default Changelist" comment="without output file">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utility/DriverSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utility/DriverSetup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/TestCase1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/TestCase1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j2.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/testng.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/utility/DriverSetup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utility/DriverSetup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utility/Locator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utility/Locator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utility/TakeScreenShot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utility/TakeScreenShot.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/test/TestCase1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/TestCase1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test/TestListner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/TestListner.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +81,10 @@
     </key>
   </component>
   <component name="RunManager" selected="TestNG.C:/Users/Priyom/Documents/flipkart/src/main/resources/testng.xml">
+    <configuration name="flipkart-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/flipkart-1.0-SNAPSHOT.jar" />
+      <method v="2" />
+    </configuration>
     <configuration name="C:/Users/Priyom/Documents/flipkart/src/main/resources/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="flipkart" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/main/resources/testng.xml" />
@@ -122,6 +126,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/Priyom/Documents/flipkart/src/main/resources/testng.xml" />
+        <item itemvalue="JAR Application.flipkart-1.0-SNAPSHOT.jar" />
         <item itemvalue="TestNG.TestCase1" />
         <item itemvalue="TestNG.Runner" />
       </list>
@@ -173,10 +178,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="433" y="108" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1596084254017" />
-    <state x="219" y="58" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596267201900">
+    <state x="219" y="58" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596359243591">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="219" y="58" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1596267201900" />
+    <state x="219" y="58" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1596359243591" />
     <state x="417" y="320" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1596176286982">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -193,30 +198,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="433" y="97" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1596176688620" />
-    <state x="496" y="108" key="FileChooserDialogImpl" timestamp="1596124365570">
+    <state x="496" y="108" key="FileChooserDialogImpl" timestamp="1596359241640">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="496" y="108" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596124365570" />
-    <state width="1481" height="290" key="GridCell.Tab.0.bottom" timestamp="1596342951754">
+    <state x="496" y="108" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596359241640" />
+    <state width="740" height="3" key="GridCell.Tab.0.bottom" timestamp="1596360183639">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="290" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596342951754" />
-    <state width="1481" height="290" key="GridCell.Tab.0.center" timestamp="1596342951754">
+    <state width="740" height="3" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596360183639" />
+    <state width="740" height="3" key="GridCell.Tab.0.center" timestamp="1596360183638">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="290" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596342951754" />
-    <state width="1481" height="290" key="GridCell.Tab.0.left" timestamp="1596342951753">
+    <state width="740" height="3" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596360183638" />
+    <state width="740" height="3" key="GridCell.Tab.0.left" timestamp="1596360183638">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="290" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596342951753" />
-    <state width="1481" height="290" key="GridCell.Tab.0.right" timestamp="1596342951754">
+    <state width="740" height="3" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596360183638" />
+    <state width="740" height="3" key="GridCell.Tab.0.right" timestamp="1596360183639">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="290" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596342951754" />
+    <state width="740" height="3" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596360183639" />
     <state width="314" height="242" key="RunAnythingAction_Filter_Popup" timestamp="1596118999999">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="314" height="242" key="RunAnythingAction_Filter_Popup/0.0.1536.824@0.0.1536.824" timestamp="1596118999999" />
+    <state x="36" y="0" key="new project wizard" timestamp="1596345852531">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="36" y="0" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1596345852531" />
     <state x="341" y="183" key="run.anything.popup" timestamp="1596119000002">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
