@@ -1,7 +1,6 @@
 # Default ignored files
 .idea
-Output/output.xlsx
-Output/result.png
+Output
 Logs
 target
 .classpath
