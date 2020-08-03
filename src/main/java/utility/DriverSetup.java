@@ -15,7 +15,7 @@ public class DriverSetup {
 
     private static String URL = "https://www.flipkart.com";
 
-    public static WebDriver getDriver(String browserName) {
+    public static WebDriver getDriver(String browserName){
 
         if (browserName.equalsIgnoreCase("chrome")) {
             String completePath = System.getProperty("user.dir") + "/driver/chromedriver.exe";
@@ -44,6 +44,19 @@ public class DriverSetup {
 
             driver = new OperaDriver();
         }
+
+       /* //cap def
+        DesiredCapabilities cap = new DesiredCapabilities();
+        cap.setBrowserName("chrome");
+        cap.setPlatform(Platform.WIN10);
+
+        //chrome options def
+        ChromeOptions options = new ChromeOptions();
+        options.merge(cap);
+
+        String hubUrl= "http://192.168.0.104:4444/wd/hub";
+        WebDriver driver = new RemoteWebDriver(new URL(hubUrl), options);*/
+
         driver.manage().window().maximize();
 
         driver.get(URL);
