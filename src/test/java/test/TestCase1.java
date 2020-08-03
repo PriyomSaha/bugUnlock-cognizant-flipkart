@@ -1,5 +1,5 @@
 /*
-* @author Priyom Saha
+ * @author Priyom Saha
  */
 package test;
 
@@ -9,6 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.*;
 import utility.DriverSetup;
 import utility.Locator;
@@ -18,8 +19,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
-@Listeners(test.TestListner.class)
-public class TestCase1 extends DriverSetup{
+@Listeners(TestListner.class)
+public class TestCase1 extends DriverSetup {
     private Locator locator;
     TakeScreenShot ts = new TakeScreenShot();
 
@@ -48,27 +49,28 @@ public class TestCase1 extends DriverSetup{
 
     //For sending the value to search
     @Test(priority = 1)
-    void search() throws InterruptedException, IOException {
+    @Parameters("query")
+    void search(String query) {
         WebElement searchBox = locator.setSearchBox();
-        searchBox.sendKeys("Mobile");
+        searchBox.sendKeys(query);
         searchBox.sendKeys(Keys.ENTER);
     }
 
     //Set the maximum price range from the dropdown in left panel
     @Test(priority = 2)
     void clickMaximumPriceDropDown() {
-
+        Assert.assertFalse(locator == null);
         locator.setMaxPriceDropDown("₹30000");
     }
 
     //Click the newest tab
-    @Test(priority = 3)
+    @Test(priority = 3, dependsOnMethods = "clickMaximumPriceDropDown")
     void clickNewestFirstTab() throws InterruptedException {
         Thread.sleep(3000);
         locator.setNewestFirst().click();
     }
 
-    @Test(priority = 4)
+    @Test(priority = 4, dependsOnMethods = "clickMaximumPriceDropDown")
     void findResults() throws InterruptedException {
         Thread.sleep(2000);
         List<WebElement> resultNames = locator.setResultNames();
@@ -90,10 +92,10 @@ public class TestCase1 extends DriverSetup{
         }
         /* Creating row for the coloumn data */
         for (i = 0; i < 5; i++) {
-            row = sheet.createRow(i+1);
+            row = sheet.createRow(i + 1);
 
             String[] all_data = new String[4];
-            all_data[0] = Integer.toString(i+1);
+            all_data[0] = Integer.toString(i + 1);
             all_data[1] = resultNames.get(i).getText();
             all_data[2] = resultRatings.get(i).getText();
             all_data[3] = resultPrices.get(i).getText();

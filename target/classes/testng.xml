@@ -3,6 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/Priyom/Documents/flipkart/src/main/java/Runner.java">
         <parameter name="browserName" value="chrome"/>
+        <parameter name="query" value="12345"/>
         <classes>
             <class name="test.TestCase1"></class>
         </classes>
