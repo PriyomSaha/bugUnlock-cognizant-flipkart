@@ -3,8 +3,7 @@
  */
 package test;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Keys;
@@ -15,6 +14,8 @@ import utility.DriverSetup;
 import utility.Locator;
 import utility.TakeScreenShot;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
@@ -50,9 +51,25 @@ public class TestCase1 extends DriverSetup {
     //For sending the value to search
     @Test(priority = 1)
     @Parameters("query")
-    void search(String query) {
+    void search(String query) throws IOException {
+        String output_path = System.getProperty("user.dir");
+        File file = new File(output_path + "\\src\\main\\resources\\data.xlsx");
+        FileInputStream inputStream = new FileInputStream(file);
+        Workbook data = new XSSFWorkbook(inputStream);
+        Sheet sheet = data.getSheet("data");
+
+        Row row;
+        if (query.equalsIgnoreCase("mobile")) {
+            row = sheet.getRow(0);
+        } else if (query.equalsIgnoreCase("number")) {
+            row = sheet.getRow(1);
+        } else {
+            row = sheet.getRow(2);
+        }
         WebElement searchBox = locator.setSearchBox();
-        searchBox.sendKeys(query);
+
+        row.getCell(0).setCellType(CellType.STRING);
+        searchBox.sendKeys(row.getCell(0).getStringCellValue());
         searchBox.sendKeys(Keys.ENTER);
     }
 
@@ -82,13 +99,18 @@ public class TestCase1 extends DriverSetup {
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet("output");
 
+        CellStyle style = workbook.createCellStyle();
+
         /* Creating row for the coloumn names */
         Row row = sheet.createRow(0);
         String cellValue[] = {"Sl.No.", "Name of the Mobile", "Rating of the Mobile", "Price of the Mobile"};
         int i = 0;
+        style.setFillForegroundColor(IndexedColors.AQUA.getIndex());
+        style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         for (String value : cellValue) {
             Cell cell = row.createCell(i++);
             cell.setCellValue(value);
+            cell.setCellStyle(style);
         }
         /* Creating row for the coloumn data */
         for (i = 0; i < 5; i++) {
