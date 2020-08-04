@@ -8,7 +8,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 public class TestListner implements ITestListener {
-    Logger logger = LogManager.getLogger(TestCase1.class);
+    Logger logger = LogManager.getLogger(TestListner.class);
     @Override
     public void onTestSuccess(ITestResult result) {
         logger.info(result.getName() + " : Success");

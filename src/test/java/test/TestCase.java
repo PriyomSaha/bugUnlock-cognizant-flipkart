@@ -3,6 +3,8 @@
  */
 package test;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -18,16 +20,22 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Listeners(TestListner.class)
-public class TestCase1 extends DriverSetup {
+public class TestCase extends DriverSetup {
+    Logger logger = LogManager.getLogger(TestCase.class);
+
     private Locator locator;
+    String output_path = System.getProperty("user.dir");
     TakeScreenShot ts = new TakeScreenShot();
 
     @BeforeTest
     @Parameters("browserName")
     void initialize(String browserName) {
+        logger.info("In browser ' "+browserName+" '");
         /*get driver*/
         DriverSetup.getDriver(browserName);
 
@@ -52,12 +60,14 @@ public class TestCase1 extends DriverSetup {
     @Test(priority = 1)
     @Parameters("query")
     void search(String query) throws IOException {
-        String output_path = System.getProperty("user.dir");
+        logger.info("With search query ' "+query+" '");
+        /*Getting the data from excel sheet*/
         File file = new File(output_path + "\\src\\main\\resources\\data.xlsx");
         FileInputStream inputStream = new FileInputStream(file);
         Workbook data = new XSSFWorkbook(inputStream);
         Sheet sheet = data.getSheet("data");
 
+        /*test case with 'Mobile' in search query(+ve) and 'Numbers / Spcl char'*/
         Row row;
         if (query.equalsIgnoreCase("mobile")) {
             row = sheet.getRow(0);
@@ -66,6 +76,7 @@ public class TestCase1 extends DriverSetup {
         } else {
             row = sheet.getRow(2);
         }
+        /*Locatintg the searchbox from the locator clasa*/
         WebElement searchBox = locator.setSearchBox();
 
         row.getCell(0).setCellType(CellType.STRING);
@@ -94,10 +105,12 @@ public class TestCase1 extends DriverSetup {
         List<WebElement> resultRatings = locator.setResultRatings();
         List<WebElement> resultPrices = locator.setResultprice();
 
+        /*Date*/
+        String fileName = new SimpleDateFormat("yyyy-MM-dd HH-mm-aaa").format(new Date());
+
         /* For storing the output in excel --> create excel file and reference */
-        String output_path = System.getProperty("user.dir");
         XSSFWorkbook workbook = new XSSFWorkbook();
-        XSSFSheet sheet = workbook.createSheet("output");
+        XSSFSheet sheet = workbook.createSheet(fileName);
 
         CellStyle style = workbook.createCellStyle();
 
@@ -130,7 +143,7 @@ public class TestCase1 extends DriverSetup {
 
         try (FileOutputStream outputStream = new FileOutputStream(output_path + "\\Output\\output.xlsx")) {
             workbook.write(outputStream);
-            ts.snapShot("result");
+            ts.snapShot(fileName);
         } catch (IOException e) {
             e.printStackTrace();
         }

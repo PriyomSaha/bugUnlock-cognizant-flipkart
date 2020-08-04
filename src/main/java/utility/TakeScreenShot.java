@@ -16,7 +16,7 @@ public class TakeScreenShot {
 
     public void snapShot(String name) throws IOException {
 
-        String output_path = System.getProperty("user.dir") + "\\Output\\";
+        String output_path = System.getProperty("user.dir") + "\\Output\\ScreenShots\\";
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(file, new File(output_path + name + ".png"));
     }
