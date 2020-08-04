@@ -21,13 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8e878e9f-43da-42d3-9097-b8dd24dd4338" name="Default Changelist" comment="without output file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utility/TakeScreenShot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utility/TakeScreenShot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/TestCase1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/TestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/TestListner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/TestListner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/TestCase1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/TestListner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/TestListner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/TestCase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,22 +213,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="496" y="108" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596359241640" />
-    <state width="1481" height="392" key="GridCell.Tab.0.bottom" timestamp="1596518473566">
+    <state width="1481" height="102" key="GridCell.Tab.0.bottom" timestamp="1596522017526">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="392" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596518473566" />
-    <state width="1481" height="392" key="GridCell.Tab.0.center" timestamp="1596518473565">
+    <state width="1481" height="102" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596522017526" />
+    <state width="1481" height="102" key="GridCell.Tab.0.center" timestamp="1596522017526">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="392" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596518473565" />
-    <state width="1481" height="392" key="GridCell.Tab.0.left" timestamp="1596518473565">
+    <state width="1481" height="102" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596522017526" />
+    <state width="1481" height="102" key="GridCell.Tab.0.left" timestamp="1596522017526">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="392" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596518473565" />
-    <state width="1481" height="392" key="GridCell.Tab.0.right" timestamp="1596518473566">
+    <state width="1481" height="102" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596522017526" />
+    <state width="1481" height="102" key="GridCell.Tab.0.right" timestamp="1596522017526">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="392" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596518473566" />
+    <state width="1481" height="102" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596522017526" />
     <state width="1481" height="314" key="GridCell.Tab.1.bottom" timestamp="1596435432417">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

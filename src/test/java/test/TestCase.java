@@ -35,7 +35,7 @@ public class TestCase extends DriverSetup {
     @BeforeTest
     @Parameters("browserName")
     void initialize(String browserName) {
-        logger.info("In browser ' "+browserName+" '");
+        logger.info("In browser ' " + browserName + " '");
         /*get driver*/
         DriverSetup.getDriver(browserName);
 
@@ -60,7 +60,7 @@ public class TestCase extends DriverSetup {
     @Test(priority = 1)
     @Parameters("query")
     void search(String query) throws IOException {
-        logger.info("With search query ' "+query+" '");
+        logger.info("With search query ' " + query + " '");
         /*Getting the data from excel sheet*/
         File file = new File(output_path + "\\src\\main\\resources\\data.xlsx");
         FileInputStream inputStream = new FileInputStream(file);
@@ -99,7 +99,7 @@ public class TestCase extends DriverSetup {
     }
 
     @Test(priority = 4, dependsOnMethods = "clickMaximumPriceDropDown")
-    void findResults() throws InterruptedException {
+    void findResults() throws InterruptedException, IOException {
         Thread.sleep(2000);
         List<WebElement> resultNames = locator.setResultNames();
         List<WebElement> resultRatings = locator.setResultRatings();
@@ -109,14 +109,26 @@ public class TestCase extends DriverSetup {
         String fileName = new SimpleDateFormat("yyyy-MM-dd HH-mm-aaa").format(new Date());
 
         /* For storing the output in excel --> create excel file and reference */
-        XSSFWorkbook workbook = new XSSFWorkbook();
+
+        File file = new File(output_path + "\\Output\\output.xlsx");
+        XSSFWorkbook workbook;
+
+        if (file.exists()) {
+            FileInputStream inputStream = new FileInputStream(file);
+            workbook = new XSSFWorkbook(inputStream);
+        }
+        else{
+            file.createNewFile();
+            workbook = new XSSFWorkbook();
+        }
+
         XSSFSheet sheet = workbook.createSheet(fileName);
 
         CellStyle style = workbook.createCellStyle();
 
         /* Creating row for the coloumn names */
         Row row = sheet.createRow(0);
-        String cellValue[] = {"Sl.No.", "Name of the Mobile", "Rating of the Mobile", "Price of the Mobile"};
+        String cellValue[] = { "Sl.No.", "Name of the Mobile", "Rating of the Mobile", "Price of the Mobile"};
         int i = 0;
         style.setFillForegroundColor(IndexedColors.AQUA.getIndex());
         style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
@@ -141,8 +153,10 @@ public class TestCase extends DriverSetup {
             }
         }
 
-        try (FileOutputStream outputStream = new FileOutputStream(output_path + "\\Output\\output.xlsx")) {
+        try (FileOutputStream outputStream = new FileOutputStream(file)) {
             workbook.write(outputStream);
+            workbook.close();
+            outputStream.close();
             ts.snapShot(fileName);
         } catch (IOException e) {
             e.printStackTrace();
