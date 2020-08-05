@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8e878e9f-43da-42d3-9097-b8dd24dd4338" name="Default Changelist" comment="without output file">
       <change beforePath="$PROJECT_DIR$/src/main/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/ExtentReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/ExtentReport.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
