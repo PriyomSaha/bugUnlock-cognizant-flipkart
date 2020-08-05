@@ -10,7 +10,7 @@ import java.util.Date;
 public class ExtentReport extends ExtentReportHelper{
     public static ExtentReports setup() {
         fileName = new SimpleDateFormat("yyyy-MM-dd HH-mm-aaa").format(new Date());
-        String output_path = System.getProperty("user.dir") + "\\Output\\report_"+fileName+".html";
+        String output_path = System.getProperty("user.dir") + "\\Output\\Reports\\report_"+fileName+".html";
 
         ExtentSparkReporter sparkReport = new ExtentSparkReporter(output_path);
         sparkReport.config().setDocumentTitle("Flipkart Automation Report");

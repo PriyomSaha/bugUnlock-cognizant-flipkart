@@ -20,18 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e878e9f-43da-42d3-9097-b8dd24dd4338" name="Default Changelist" comment="without output file">
-      <change afterPath="$PROJECT_DIR$/src/test/java/grid/TestGrid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/ExtentReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/ExtentReportHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/TestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/TestListner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/TestListner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utility/DriverSetup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utility/DriverSetup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utility/Locator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utility/Locator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utility/TakeScreenShot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utility/TakeScreenShot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/TestListner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/TestListner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/ExtentReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/ExtentReport.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
