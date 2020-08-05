@@ -20,22 +20,22 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Listeners(TestListner.class)
-public class TestCase extends DriverSetup {
+public class TestCase extends ExtentReportHelper {
     Logger logger = LogManager.getLogger(TestCase.class);
 
     private Locator locator;
     String output_path = System.getProperty("user.dir");
+    String browser = "";
     TakeScreenShot ts = new TakeScreenShot();
 
     @BeforeTest
     @Parameters("browserName")
     void initialize(String browserName) {
         logger.info("In browser ' " + browserName + " '");
+        browser = browserName;
         /*get driver*/
         DriverSetup.getDriver(browserName);
 
@@ -53,7 +53,7 @@ public class TestCase extends DriverSetup {
         Thread.sleep(3000);
         WebElement crossButton = locator.setCrossButton();
         crossButton.click();
-
+        test.info("To close the login popup modal");
     }
 
     //For sending the value to search
@@ -61,6 +61,10 @@ public class TestCase extends DriverSetup {
     @Parameters("query")
     void search(String query) throws IOException {
         logger.info("With search query ' " + query + " '");
+
+        test.info("In browser ' " + browser + " '");
+        test.info("With search query ' " + query + " '");
+
         /*Getting the data from excel sheet*/
         File file = new File(output_path + "\\src\\main\\resources\\data.xlsx");
         FileInputStream inputStream = new FileInputStream(file);
@@ -82,6 +86,7 @@ public class TestCase extends DriverSetup {
         row.getCell(0).setCellType(CellType.STRING);
         searchBox.sendKeys(row.getCell(0).getStringCellValue());
         searchBox.sendKeys(Keys.ENTER);
+
     }
 
     //Set the maximum price range from the dropdown in left panel
@@ -89,6 +94,7 @@ public class TestCase extends DriverSetup {
     void clickMaximumPriceDropDown() {
         Assert.assertFalse(locator == null);
         locator.setMaxPriceDropDown("₹30000");
+        test.info("To set the maximum price range to ₹30000");
     }
 
     //Click the newest tab
@@ -96,6 +102,7 @@ public class TestCase extends DriverSetup {
     void clickNewestFirstTab() throws InterruptedException {
         Thread.sleep(3000);
         locator.setNewestFirst().click();
+        test.info("To show the newest mobiles");
     }
 
     @Test(priority = 4, dependsOnMethods = "clickMaximumPriceDropDown")
@@ -105,19 +112,16 @@ public class TestCase extends DriverSetup {
         List<WebElement> resultRatings = locator.setResultRatings();
         List<WebElement> resultPrices = locator.setResultprice();
 
-        /*Date*/
-        String fileName = new SimpleDateFormat("yyyy-MM-dd HH-mm-aaa").format(new Date());
 
+        test.info("Store the data in excell sheet and capture a screen shot");
         /* For storing the output in excel --> create excel file and reference */
-
         File file = new File(output_path + "\\Output\\output.xlsx");
         XSSFWorkbook workbook;
 
         if (file.exists()) {
             FileInputStream inputStream = new FileInputStream(file);
             workbook = new XSSFWorkbook(inputStream);
-        }
-        else{
+        } else {
             file.createNewFile();
             workbook = new XSSFWorkbook();
         }
@@ -128,7 +132,7 @@ public class TestCase extends DriverSetup {
 
         /* Creating row for the coloumn names */
         Row row = sheet.createRow(0);
-        String cellValue[] = { "Sl.No.", "Name of the Mobile", "Rating of the Mobile", "Price of the Mobile"};
+        String cellValue[] = {"Sl.No.", "Name of the Mobile", "Rating of the Mobile", "Price of the Mobile"};
         int i = 0;
         style.setFillForegroundColor(IndexedColors.AQUA.getIndex());
         style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
@@ -141,10 +145,15 @@ public class TestCase extends DriverSetup {
         for (i = 0; i < 5; i++) {
             row = sheet.createRow(i + 1);
 
-            String[] all_data = new String[4];
+            String[] all_data = new String[5];
+
             all_data[0] = Integer.toString(i + 1);
             all_data[1] = resultNames.get(i).getText();
-            all_data[2] = resultRatings.get(i).getText();
+            if (resultRatings.size() == resultPrices.size()) {
+                all_data[2] = resultRatings.get(i).getText();
+            } else {
+                all_data[2] = "ratings not available";
+            }
             all_data[3] = resultPrices.get(i).getText();
             int j = 0;
             for (String data : all_data) {
