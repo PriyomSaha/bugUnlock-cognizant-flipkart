@@ -42,6 +42,7 @@ public class TestListner extends ExtentReportHelper implements ITestListener {
         logger.error(result.getName() + " : Failed");
         test.error(result.getName() + " : Failed");
         test.error(result.getThrowable());
+        test.fail("SORRY! Couldn't go fwd.");
     }
 
     @Override
