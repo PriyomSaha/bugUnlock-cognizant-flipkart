@@ -1,7 +1,7 @@
-package test;/*
+/*
  * @author Priyom Saha
  */
-
+package test;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.ITestContext;
@@ -42,7 +42,13 @@ public class TestListner extends ExtentReportHelper implements ITestListener {
         logger.error(result.getName() + " : Failed");
         test.error(result.getName() + " : Failed");
         test.error(result.getThrowable());
+        test.info("Screen shot added by the name : failed__"+fileName);
         test.fail("SORRY! Couldn't go fwd.");
+        try {
+            test.addScreenCaptureFromPath( System.getProperty("user.dir")+"\\Output\\ScreenShots\\failed__"+fileName+".png");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

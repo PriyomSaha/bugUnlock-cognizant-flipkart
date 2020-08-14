@@ -111,7 +111,7 @@
                         <!--suppress UnresolvedMavenProperty -->
                         <browser>${browserName}</browser>
                         <!--suppress UnresolvedMavenProperty -->
-                        <browser>${query}</browser>
+                         <browser>${query}</browser>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

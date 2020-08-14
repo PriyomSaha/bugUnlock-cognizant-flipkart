@@ -20,11 +20,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.List;
 
 @Listeners(TestListner.class)
-public class TestCase extends ExtentReportHelper {
-	Logger logger = LogManager.getLogger(TestCase.class);
+public class SearchMobileTest extends ExtentReportHelper {
+	Logger logger = LogManager.getLogger(SearchMobileTest.class);
 
 	private Locator locator;
 	String output_path = System.getProperty("user.dir");
@@ -33,7 +34,7 @@ public class TestCase extends ExtentReportHelper {
 
 	@BeforeTest
 	@Parameters("browserName")
-	void initialize(String browserName) {
+	void initialize(String browserName) throws MalformedURLException {
 		logger.info("In browser ' " + browserName + " '");
 		browser = browserName;
 		/* get driver */
@@ -74,12 +75,12 @@ public class TestCase extends ExtentReportHelper {
 		Row row;
 		if (query.equalsIgnoreCase("mobile")) {
 			row = sheet.getRow(0);
-		} else if (query.equalsIgnoreCase("number")) {
+		} else if (query.equalsIgnoreCase("something")) {
 			row = sheet.getRow(1);
 		} else {
 			row = sheet.getRow(2);
 		}
-		/* Locatintg the searchbox from the locator clasa */
+		/* Locatintg the searchbox from the locator class */
 		WebElement searchBox = locator.setSearchBox();
 
 		row.getCell(0).setCellType(CellType.STRING);
@@ -159,8 +160,7 @@ public class TestCase extends ExtentReportHelper {
 			}
 			/* Price */
 			all_data[3] = resultPrices.get(i).getText();
-
-			// 1 Karbonn KX4 ratings not available ₹899
+			
 
 			/* DATA */
 			int j = 0;
@@ -168,6 +168,12 @@ public class TestCase extends ExtentReportHelper {
 				Cell cell = row.createCell(j++);
 				cell.setCellValue(data);
 			}
+
+		}
+
+		/* FOR AUTO SIZING THE SHEET DATA*/
+		for(i=0;i<cellValue.length;i++) {
+			sheet.autoSizeColumn(i);
 		}
 
 		try (FileOutputStream outputStream = new FileOutputStream(file)) {
@@ -175,7 +181,10 @@ public class TestCase extends ExtentReportHelper {
 			workbook.write(outputStream);
 			workbook.close();
 			outputStream.close();
+			test.info("Workbook sheet added by the name : "+fileName);
 			ts.snapShot(fileName);
+			test.info("Screen shot added by the name : "+fileName+".png");
+			test.addScreenCaptureFromPath(output_path+"\\Output\\ScreenShots\\"+fileName+".png");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

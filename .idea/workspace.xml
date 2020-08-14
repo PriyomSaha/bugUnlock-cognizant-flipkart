@@ -21,13 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="8e878e9f-43da-42d3-9097-b8dd24dd4338" name="Default Changelist" comment="without output file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utility/DriverSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utility/DriverSetup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/grid/TestGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/grid/TestGrid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/ExtentReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/ExtentReport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/ExtentReportHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/ExtentReportHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/TestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/SearchMobileTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/TestListner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/TestListner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utility/DriverSetup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utility/DriverSetup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/testng.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/test/TestListner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/TestListner.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,17 +124,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="&lt;default&gt; (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestGrid.initial" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="flipkart" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="grid.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="grid" />
+      <option name="MAIN_CLASS_NAME" value="grid.TestGrid" />
+      <option name="METHOD_NAME" value="initial" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="&lt;default&gt;" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="&lt;default&gt; (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="flipkart" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="PACKAGE" />
@@ -144,10 +155,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/Priyom/Documents/flipkart/src/main/resources/testng.xml" />
+        <item itemvalue="TestNG.TestGrid.initial" />
         <item itemvalue="TestNG.TestGrid" />
         <item itemvalue="Application.TestGrid" />
         <item itemvalue="TestNG.&lt;default&gt; (1)" />
-        <item itemvalue="TestNG.&lt;default&gt;" />
       </list>
     </recent_temporary>
   </component>
@@ -237,26 +248,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="433" y="97" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1596643580106" />
-    <state x="496" y="108" key="FileChooserDialogImpl" timestamp="1596725162903">
+    <state x="496" y="108" key="FileChooserDialogImpl" timestamp="1597074869099">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="496" y="108" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596725162903" />
-    <state width="1481" height="4" key="GridCell.Tab.0.bottom" timestamp="1596731909766">
+    <state x="496" y="108" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597074869099" />
+    <state width="1481" height="132" key="GridCell.Tab.0.bottom" timestamp="1597381540652">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="4" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596731909766" />
-    <state width="1481" height="4" key="GridCell.Tab.0.center" timestamp="1596731909766">
+    <state width="1481" height="132" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597381540652" />
+    <state width="1481" height="132" key="GridCell.Tab.0.center" timestamp="1597381540652">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="4" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596731909766" />
-    <state width="1481" height="4" key="GridCell.Tab.0.left" timestamp="1596731909766">
+    <state width="1481" height="132" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597381540652" />
+    <state width="1481" height="132" key="GridCell.Tab.0.left" timestamp="1597381540652">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="4" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596731909766" />
-    <state width="1481" height="4" key="GridCell.Tab.0.right" timestamp="1596731909766">
+    <state width="1481" height="132" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597381540652" />
+    <state width="1481" height="132" key="GridCell.Tab.0.right" timestamp="1597381540652">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="4" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596731909766" />
+    <state width="1481" height="132" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597381540652" />
     <state width="1481" height="314" key="GridCell.Tab.1.bottom" timestamp="1596435432417">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
