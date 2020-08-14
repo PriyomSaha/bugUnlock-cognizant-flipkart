@@ -2,8 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="1" preserve-order="true" name="flipkart-automation-positive">
-        <parameter name="browserName"  value="chrome"/>
-        <parameter name="query"  value="mobile"/>
+
         <classes>
             <class name="test.SearchMobileTest"></class>
         </classes>
